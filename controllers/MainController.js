@@ -2,6 +2,7 @@
 	var app = angular.module('schoolWebsite');
 	var MainController = function($scope,$http){
 		console.log("MainController");
+		console.log("Test comment");
 		$scope.home = 'false';
 		$scope.adminZone = 'false';
 		$scope.studentZone = 'false';
