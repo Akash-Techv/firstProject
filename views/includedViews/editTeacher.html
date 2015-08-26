@@ -1,0 +1,100 @@
+<form name="editTeacherForm" ng-submit="updateTeacher(teacher)" novalidate>
+            <div class="row">
+                <div class="form-group col-sm-6  rp10 form-inline" ng-class="(editTeacherForm.firstName.$dirty && editTeacherForm.firstName.$invalid) ? 'has-error' : 'has-primary' ">
+                    <label for="firstName" class="col-sm-3 text-right rp10">First Name<i class="required">*</i></label>
+                    <input type="text" placeholder="First Name" class="form-control col-sm-3" name="firstName" 
+                    ng-model="teacher.firstName" required>
+                    <p ng-show="editTeacherForm.firstName.$invalid && !editTeacherForm.firstName.$pristine" class="required">first name is required.</p>
+                </div>
+                <div class="form-group col-sm-6  rp10 form-inline">
+                    <label for="middleName" class="col-sm-3 text-right rp10">Middle Name</label>
+                    <input type="text" placeholder="Middle Name" class="form-control col-sm-3" id="middleName" name="middleName" 
+                    ng-model="teacher.middleName">                  
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6 rp10 form-inline" ng-class="(editTeacherForm.lastName.$dirty && editTeacherForm.lastName.$invalid) ? 'has-error' : 'has-primary' ">
+                    <label for="lastName" class="col-sm-3 text-right rp10">Last Name<i class="required">*</i></label>
+                    <input type="text" placeholder="Last Name" class="form-control col-sm-3" id="lastName" name="lastName" 
+                    ng-model="teacher.lastName" required>
+                    <p ng-show="editTeacherForm.lastName.$invalid && !editTeacherForm.lastName.$pristine" class="required"> last name is required</p>
+                </div>
+                <div class="form-group col-sm-6  rp10 form-inline">
+                    <label for="middleName" class="col-sm-3 text-right rp10">Email<i class="required">*</i></label>
+                    <input type="email" class="form-control col-sm-3" id="email" placeholder="Email Id" name="email" ng-model="teacher.email"  readonly>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6 rp10 form-inline">
+                    <label for="gender" class="col-sm-3 text-right rp10">Gender<i class="required">*</i></label>
+                    <select id="gender" class="form-control col-sm-3" name="gender" ng-model="teacher.gender" required>
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6 rp10 form-inline">
+                    <label for="class" class="col-sm-3 text-right rp10">Class to Offer<i class="required">*</i></label>
+                    <button type="button" class="form-control btn btn-block" ng-model="teacher.class" data-html="1" data-multiple="1" data-animation="am-flip-x" bs-options="class.id as class.classNumber for class in classList" bs-select><span class="caret"></span>
+                </div>
+            </div>
+
+            <div class="row">   
+                <div class="form-group col-sm-6 rp10 form-inline" ng-class="(editTeacherForm.addressLine1.$dirty && editTeacherForm.addressLine1.$invalid) ? 'has-error' : 'has-primary' ">
+                    <label for="address1" class="col-sm-3 text-right rp10">Address1<i class="required">*</i></label>
+                    <textarea id="address1" placeholder="Address 1" class="form-control col-sm-3" name="addressLine1" ng-model="teacher.address1" required ></textarea>
+                    <p ng-show="editTeacherForm.addressLine1.$invalid && !editTeacherForm.addressLine1.$pristine" class="required"> address is required</p>
+                </div>
+                <div class="form-group col-sm-6 rp10 form-inline">
+                    <label for="address2" class="col-sm-3 text-right rp10">Address2</label>
+                    <textarea id="address2" placeholder="Address 2" class="form-control col-sm-3" name="addressLine2" ng-model="teacher.address2"></textarea>
+                </div>
+            </div>
+
+            
+            <div class="row">    
+                <div class="form-group col-sm-6 rp10 form-inline" ng-class="(countrySelection == false) ? 'has-error' : 'has-primary' ">
+                    <label for="country" class="col-sm-3 text-right rp10">Country<i class="required">*</i></label>
+                     <select  class="form-control col-sm-3" id="country" name="country" 
+                        ng-model="teacher.country" ng-options="value as label for (value,label) in countryArray" ng-change="getState(teacher.country)">
+                        <option value="">Select Country</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6 rp10 form-inline" ng-class="(stateSelection == false) ? 'has-error' : 'has-primary' ">
+                    <label for="state" class="col-sm-3 text-right rp10">State<i class="required">*</i></label>  
+                    <select class="form-control col-sm-3" id="state" name="state"
+                            ng-model="teacher.state" ng-options="i for i in stArray">
+                        <option value="">Select State</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6 rp10 form-inline" ng-class="(editTeacherForm.city.$dirty && editTeacherForm.city.$invalid) ? 'has-error' : 'has-primary' ">
+                    <label for="city" class="col-sm-3 text-right rp10">City<i class="required">*</i></label>
+                    <input type="text" placeholder="City" class="form-control col-sm-3" id="city" name="city" ng-model="teacher.city" required>
+                    <p ng-show="editTeacherForm.city.$invalid && !editTeacherForm.city.$pristine" class="required">city is required</p>
+                </div>
+                <div class="form-group col-sm-6 rp10 form-inline" ng-class="(editTeacherForm.mobileNumber.$dirty && editTeacherForm.mobileNumber.$invalid) ? 'has-error' : 'has-primary' ">
+                    <label for="mobilePhone" class="col-sm-3 text-right rp10">Mobile Phone<i class="required">*</i></label>
+                    <input type="text" class="form-control col-sm-3" id="mobileNumber" placeholder="Mobile Number" name="mobileNumber" 
+                    ng-model="teacher.mobileNumber"  required>
+                    <p ng-show="editTeacherForm.mobileNumber.$invalid && !editTeacherForm.mobileNumber.$pristine" class="required"> mobile number is required</p>
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-right">
+                <div class="col-sm-6 rp20">
+                    <div class="form-group">
+                        <button type="submit" ng-disabled="editTeacherForm.$invalid" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-left" >
+                    <div class="form-group">
+                        <input type="button" class="btn btn-primary" value="Cancel" ng-click="cancel()">
+                    </div>
+                </div>
+            </div>
+        </form>

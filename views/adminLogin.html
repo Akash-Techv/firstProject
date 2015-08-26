@@ -1,0 +1,16 @@
+<div style="padding-top:40px;">
+		<form ng-submit="adminLogin(loginData)">
+			<div class="form-group col-sm-12 rp10 form-inline">
+				<label for="email" class="col-sm-5 text-right">Email<i class="required">*</i></label>
+					<input type="text" placeholder="Enter email" class="form-control" name="email" ng-model="loginData.email" required>
+			</div>
+			<div class="form-group col-sm-12  rp10 form-inline">
+				<label for="password" class="col-sm-5 text-right">Password<i class="required">*</i></label>
+					<input type="password" placeholder="Enter password" class="form-control" name="password" ng-model="loginData.password" required>
+			</div>
+			<div class="form-group col-sm-6 text-right rp10">
+					<input type="submit" value="submit">
+			</div>
+		</form>
+</div>
+

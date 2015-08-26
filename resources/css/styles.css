@@ -1,0 +1,654 @@
+/* 
+    Document   : styles
+    Created on : 27 May, 2015, 10:09:42 AM
+    Author     : aditya
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*Main screen and global styles*/
+
+body, html{
+	margin: 0px;
+	padding: 0px;
+	background-color: #CCCCB2;
+}
+.required{
+	color: red;
+}
+.navStyle{
+	border : 0px;
+	background-color: #C68D8D;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak { display: none; }
+/*Defaults*/
+.col-sm-1, .col-md-1, .col-lg-1,
+.col-sm-2, .col-md-2, .col-lg-2,
+.col-sm-3, .col-md-3, .col-lg-3,
+.col-sm-4, .col-md-4, .col-lg-4,
+.col-sm-5, .col-md-5, .col-lg-5,
+.col-sm-6, .col-md-6, .col-lg-6,
+.col-sm-7, .col-md-7, .col-lg-7,
+.col-sm-8, .col-md-8, .col-lg-8,
+.col-sm-9, .col-md-9, .col-lg-9,
+.col-sm-10, .col-md-10, .col-lg-10,
+.col-sm-11, .col-md-11, .col-lg-11,
+.col-sm-12, .col-md-12, .col-lg-12{
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+
+/*Resetting*/
+.row{
+	padding: 0px;
+	margin: 0px;
+}
+
+.rp10{
+	padding-right: 10px;
+}
+.lp10{
+	padding-left: 10px;
+}
+.rp20{
+	padding-right: 20px;	
+}
+.lp20{
+	padding-left: 20px;	
+}
+.mr10{	
+	margin-right: 10px;
+}
+.ml10{
+	margin-left: 10px;
+}
+.grey{
+	color: #888;
+}
+.greybg{
+	background-color: #888;
+	color: #303030;
+}
+
+/*Header Section Styles*/
+.headerSection{
+	display: block;
+	/*background-color: #303030;*/
+	color: #ccc;
+	padding: 40px 0px;
+	background-color: #009999;
+
+}
+.logoSection, .trNav{
+	/*display: inline-block;*/
+	vertical-align: middle;
+}
+.trNav{
+	display: block;
+}
+.trNav ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.trNav ul li{
+	display: inline-block;
+	padding: 0px 10px;
+}
+.trNav a{
+	color: #ccc;
+	text-decoration: none;
+}
+.trNav a:hover{
+	color: #ddd;
+}
+.navColor{
+	background-color: #FF9933;
+	border : none;
+	
+}
+
+/*Header Section End*/
+
+/* Body Section Styles */
+.bodySection{
+
+}
+.list_anchor{
+      display: block;
+      border-bottom: 1px solid #ccc;
+}
+.alert.top{
+    width: 50%;
+    left: 25%;
+    text-align: center;
+}
+/*---- Login Page*/
+.loginContainer{
+	width: 700%; 
+	padding-left: 520px;
+}
+.loginContainer .heading{
+	display: block;
+	font-weight: bold;
+	padding-bottom: 10px;
+	color: #347DD1;
+        font-size: 18px;
+}
+.loginContainer .subHeading{
+	padding-bottom: 8px;
+}
+.loginContainer button{
+	background-color: #398AE6;
+	border: none;
+	padding: 5px 12px !important;
+	color: #fff;
+}
+.userTypeBut .active{
+	background-color: #1B508C;
+	color: #fff;
+}
+.loginContainer .form-group{
+	/*margin: 0px;*/
+}
+.loginContainer .form-group input{
+	padding: 5px;
+	font-size: 0.9em;
+}
+.loginContainer .form-group button{
+	padding: 5px;
+	font-size: 0.9em;
+}
+.loginContainer .form-group button:hover{
+	background-color: #1B6AC4 !important;
+}
+.err_msg{
+    color: #b94a48;
+}
+.add_btn{
+    color:#337ab7;
+}
+.loginContainer .form-group a{
+	font-size: 0.86em;
+	text-decoration: underline;
+}
+.loginContainer .form-group button.loginButton{
+	padding: 5px 20px !important;
+	font-size: 0.9em;
+}
+/*---- Login Page End--------*/
+
+/*---- Sign Up Page Start----*/
+.signup_form.form-horizontal .form-group{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.signup_form fieldset,.signup_org{
+    width:75%;
+    margin: 0 auto;
+}
+/*---- Sign Up Page End----*/
+.dashboard{
+	font-weight: bold;
+	color: #fff;
+}
+.sts_btn {
+  width: 90px;
+}
+.orgIcon{
+	padding: 0px 8px;
+	width: 28px;
+	height: 28px;
+	background: url("../images/library.png") left top;
+	background-size: 100%;
+}
+.titleHead{
+	padding: 8px 10px;
+}
+.searchBar{
+	background-color: #ccc;
+}
+.search{
+	border-radius: 5px;
+	padding: 0px 8px;
+	border: none;
+}
+.searchIcon{
+	margin-left: -20px;
+}
+.panel {
+    margin-bottom: 0px;
+    background-color: #fff;
+    border: 0; 
+    border-radius: 0px;
+    -webkit-box-shadow: 0 ; 
+    box-shadow: 0; 
+}
+.listHeading{
+    background-color: #5A9DE8;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+}
+.listHeading>.panel-heading {
+    color: #fff;
+    background-color: #5A9DE8;
+    border: none;
+}
+.listHeading a:hover{
+    text-decoration: none;
+}
+.panel-group .panel+.panel{
+	margin:0
+}
+.panel-group .panel{
+    border-radius:0;
+}
+.panel-body{
+    padding:0;
+}
+.list-group {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.list-group-item{
+    border:0;
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+    margin-bottom:0;
+}
+.panel-group{
+    margin-bottom: 0;
+}
+.panel-title .glyphicon{
+    font-size: 12px;
+}
+.list-group-item .glyphicon{
+    font-size: 0.56em;
+    vertical-align: middle;
+}
+.list-group-item:first-child{
+    border-radius: 0;
+}
+.list-group-item:last-child{
+    border: none;
+    border-radius: 0;
+}
+.listContent{
+	display: block;
+}
+.listContent ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.listContent ul li{
+	display: block;
+	background-color: #eee;
+	border-bottom: #aaa solid 1px;
+	padding: 8px 20px;
+}
+.listContent ul li a{
+	color: #fff;
+}
+.listContent ul li a.active{
+	color: #f60;	
+}
+.listContent ul li:last-child{
+	border-bottom: none;
+}
+.listContent .glyphicon{
+	font-size: 0.56em;
+	vertical-align: middle;
+}
+
+/*Dashboard*/
+.orgSelect{
+	padding: 8px 12px;
+	font-size: 0.56em;
+	vertical-align: middle;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-style: italic;
+}
+.contentHolders{
+	padding: 12px;
+}
+.searchForm input[type="text"]{
+	width: 120px;
+}
+.statusBtn{
+	display: block;
+	text-align: center;
+	padding: 5px 8px;
+}
+.statusBtn.stSuccess{
+	background-color: #0c0;
+	border-radius: 5px;
+}
+.statusBtn.stFailed{
+	background-color: #ccc;
+	border-radius: 5px;
+}
+.statusBtn.stDanger, .statusBtn.stReset{
+	display: inline-block;
+	border-radius: 5px;
+	width: 49%; 
+	
+}
+.statusBtn.stDanger{
+	background-color: #c00;
+	color: #fff;
+}
+.statusBtn.stReset{
+	border: 1px solid #ccc;
+}
+.labelDanger{
+	background-color: #c00;
+	padding: 3px 8px;
+	border-radius: 3px;
+	color: #ccc;
+}
+.labelSuccess{
+	background-color: #0c0;
+	padding: 3px 8px;
+	border-radius: 3px;
+	color: #303030;
+}
+.userStatus,.EventHistory{
+	min-height: 200px;
+	max-height: 250px;
+    overflow-y: auto;
+}
+.events,.IoTMonitor{
+	min-height: 150px;
+	max-height: 150px;
+    overflow-y: auto;
+}
+.dbrd table{
+	margin-bottom: 0px;
+}
+.mrg{
+	margin-right:2px;
+}
+.mtop tr:nth-child(even){background: #ECECEC;}
+.mtop tr:nth-child(odd){background: #FFF;}
+
+.mtop tr th{
+	background-color: #303030;
+	font-weight: normal;
+        color:#ccc;
+}
+
+.contentHolders td button.btn-danger{
+	background-color: #D52929;
+	border: 1px solid #ccc;
+	color: #EDC7C7;
+}
+
+/**/
+
+/*----------- Add User Page*/
+.formHolder{
+	padding: 20px 0px;
+}
+.formHolder .heading{
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #303030;
+}
+.formHolder .loginButton{
+	background-color: #398AE6;
+	border: none;
+	padding: 5px 12px !important;
+	color: #fff;
+        margin:1px;
+}
+.formHolder .loginButton:hover{
+	background-color: #1B6AC4 !important;
+	color: #fff !important;
+}
+.formHolder label{
+	font-weight: normal;
+	color: #555;
+	font-size: 0.96em;
+}
+.formHolder i{
+	/* color: #c00; */
+	/* font-weight: bold; */
+}
+.error{
+    position: absolute;
+    right: 50px;    
+}
+/* Body Section End*/
+
+
+/* Footer Section Styles*/
+.footerSection{
+	color: #fff;
+	background-color: #009999;
+	padding: 5px 0px;
+	font-size: 0.86em;
+	color: #aaa;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+}
+/* Footer Section End*/
+
+
+ng-view.ng-enter,[ng-view].ng-enter{
+    opacity: 0;
+    transition: opacity 1s;
+}
+ng-view.ng-enter-active,[ng-view].ng-enter-active{
+    opacity: 1;
+}
+
+.ajax-upload-dragdrop span{
+	display:none
+}
+#previewImg,#previewOrgImg,#iotpreviewImg{
+    width:120px;
+    height:80px;
+}
+#step_badges{
+    position: relative;
+    text-align: left;
+}
+#step_badges .badge{
+    font-size: 14px;
+    line-height: 2.5;
+    color: #fff;
+    border-radius: 40px;
+    margin-right: 8%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 1;
+}
+#step_badges .badge.active {
+    background-color: #337ab7;
+}
+#step_badges .badge.success {
+    background-color: #5cb85c;
+}
+#step_badges .liner{
+    width: 100%;
+    height: 3px;
+    display: block;
+    border-top: 1px solid #ddd;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    z-index: 0;
+}
+#serviceSelect li,#iotSelect li{
+    list-style: none;
+    display: inline-block;
+    width:60px;
+    height:60px;
+    margin:2px;
+    opacity:0.7;
+    cursor: pointer;
+}
+#serviceSelect li:hover,#iotSelect li:hover{
+    border:2px solid #5A9DE8;
+    opacity:1;
+}
+#serviceSelect .thumbnail.selected,#iotSelect .thumbnail.selected{
+    border:2px solid #5A9DE8;
+    opacity:1;
+}
+#serviceSelect .thumbnail > img{
+    width:100%;
+    height:100%;
+}
+/* css for selecting organizations and rooms */
+.allOrgsRooms{
+    border: 1px solid #ACACAC;
+    border-radius: 4px;
+    height: auto;
+    max-height: 300px;
+}
+.orgsField{
+    height: auto;
+    max-height: 300px;
+    overflow: auto;
+}
+.roomsFiled{
+    padding: 10px;
+}
+.btn-default .badge{
+    background-color: #777;
+}
+.orgs{
+    margin-left: 10px;
+    margin-top: 12px;	
+}
+.orgs .btn{
+    margin: 0px;
+}
+.room{
+    padding: 4px;
+    margin-bottom: 5px;
+}
+.room .btn{
+    height: 30px;
+    padding: 3px;
+}
+.showedRooms{
+    height: 210px;
+    overflow: auto;
+}
+.roomNavPart{
+    height: 40px;
+    border: 1px solid #eee;
+}
+.dropdown-menu{
+    max-height: 260px;
+    overflow-y: auto;
+}
+.dropdown-menu li img{
+    width:30px;
+    height:30px;
+}
+.inactive,.point{
+    cursor: pointer;
+}
+textarea {
+    resize: none;
+}
+.modal-body{
+    max-height: 250px;
+    overflow-y: auto;
+}
+table { 
+	table-layout: fixed;
+}
+.table_bottom{
+   margin-bottom: 30px;
+}
+table th, table td {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+table tbody tr td .list-group{
+    margin: 0;
+}
+.profilePic{
+    display: inline-block;
+    vertical-align: top;
+}
+.profilePic{
+	position: relative;
+	margin-left: 8px;
+}
+.profilePic img{
+	width: 100px;
+	border: 1px solid #454242;
+	height: 100px;
+	margin-right: 10px;
+}
+.profilePic span{
+	position: absolute;
+	right: 0px;
+	top: -5px;
+	padding: 5px;
+	background-color: #454242;
+	color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2em;
+	font-size: 0.86em;
+}
+#orgTypeSel img{
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+.th_orgType{
+    border-radius: 3px;
+}
+/*------------ Profile Page */
+.inputInline{
+	display: inline-block;
+}
+textarea.textAreaAddress{
+	height: 7.7em;
+}
+.orgRm .dropdown-menu {
+    width: 30%;
+}
+@media (max-width: 767px) {
+    .orgRm .dropdown-menu {
+        width: auto;
+    }
+}
+.mrg_top{
+    position: relative;
+    top:45%;
+}
+#mapOverlay{
+    width:525px;
+    height:242px;
+    text-align:center;
+    background-color: rgba(37, 35, 35, 0.7);
+    position: absolute;
+    z-index: 10;
+}
+#googleMap{
+   width:525px;
+   height:242px; 
+}

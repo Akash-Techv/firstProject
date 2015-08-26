@@ -1,0 +1,42 @@
+<div id="right_container"  class="col-sm-12">
+	<table class="table table-bordered table-condensed table-responsive mtop">
+		<thead>
+			<tr>
+				<th>class names</th>
+				<th>actions</th>
+				<th ng-if="editClass=='true' && addClass=='false'">Add Class</th>
+				<th ng-if="editClass=='true' && addClass=='false'">Edit class</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="class in classList">
+				<td>{{class.classNumber}}</td>
+				<td><a href="" ng-click="addClass='true';editClass='false'">add</a> <a href="" ng-click="editClass='true';addClass='false'">edit</a> <a href="" ng-click="deleteClass(class)">delete</a></td></td>
+				<td ng-if="editClass=='true' && addClass=='false'"><div >
+					<form>
+						<table>
+							<tr>
+								<td>Class Name : </td>
+								<td><input type="hidden" ng-model="class.id"/></td>
+								<td><input type="text" ng-model="class.name"/></td>
+								<td><button ng-click="saveClass(class);">Save</button>
+							</tr>
+						</table>
+					</form>
+				</div></td>
+
+				<td ng-if="addClass=='true' && editClass=='false'"><div >
+					<form>
+						<table>
+							<tr>
+								<td>Class Name : </td>
+								<td><input type="text" ng-model="class.classNumber"/></td>
+								<td><button ng-click="add(class)">Add</button>
+							</tr>
+						</table>
+					</form>
+				</div></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,141 @@
+<div class="bodySection row" ng-init="studentsDetails='false';teachersDetails='false'">
+    <div ng-cloak class="col-sm-2">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default" id="panel1">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a  data-target="#collapseOne" href="">Administration</a>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default" id="panel2">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#collapseTwo" href="" class="collapsed"> Students </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <ul style="margin:0px;">
+                        <li ng-click="studentsDetails='true';teachersDetails='false';viewDetails='false';editDetails='false';addTeacher='false';viewTeacher='false';editTeacher='false'"><a href="">Forms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel panel-default" id="panel3">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#collapseThree" href="" class="collapsed">Teachers</a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <ul>
+                         <li ng-click="studentsDetails='false';viewDetails='false';addTeacher='true';editDetails='false';viewTeacher='false';editTeacher='false';ngReload();adjustClasses='false'"><a href="">Add Teacher</a></li>
+                         <li ng-click="teachersDetails='true';studentsDetails='false';viewDetails='false';addTeacher='false';editDetails='false';viewTeacher='false';editTeacher='false';ngReload();adjustClasses='false'"><a href="">Assign</a></li>
+                          <li ng-click="teachersDetails='false';studentsDetails='false';viewDetails='false';addTeacher='false';editDetails='false';viewTeacher='false';editTeacher='false';ngReload();adjustClasses='true'"><a href="">Adjust Classes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div ng-if="studentsDetails=='true' && viewDetails=='false' && editDetails=='false' && addTeacher=='false' && viewTeacher=='false' && editTeacher=='false'">
+        <div id="right_container"  class="col-sm-10">
+            <div class="container-fluid">
+            <input type="text" ng-model="searchText" placeholder="Search" style="position: relative;top: 1px;right: -371px;">
+                <table class="table table-bordered table-condensed table-responsive mtop">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date of Birth</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        <tr>
+                    </thead>
+                    <tbody ng-if="noRecordsStudent=='false'">
+                        <tr ng-repeat="student in students  | filter : searchText">
+                            <td>{{student.firstName}} {{student.lastName}}</td>
+                            <td>{{student.dateOfBirth | date:'dd-MM-yyyy'}}</td>
+                            <td>{{student.status}}</td>
+                            <td><a href="" ng-click="getInfo(student)">view</a> <a href="" ng-click="editInfo(student);">edit</a> <a href="" ng-click="deleteInfo(student)">delete</a></td>
+                        </tr>
+                        <tbody ng-if="noRecordsStudent=='true'">
+                            <tr>
+                                <td colspan="4" class="text-center">{{notification}}</td>
+                            </tr>
+                        </tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+
+    <div ng-if="teachersDetails=='true' && viewDetails=='false' && addTeacher=='false' && viewTeacher=='false' &&editTeacher=='false'">
+        <div id="right_container"  class="col-sm-10">
+            <div class="container-fluid">
+            <input type="text" ng-model="searchText" placeholder="Search" style="position: relative;top: 1px;right: -371px;">
+                <table class="table table-bordered table-condensed table-responsive mtop">
+                    <thead >
+                        <tr>
+                            <th>Teacher Name</th>
+                            <th>Classed Assigned</th>
+                            <th>Actions</th>
+                        <tr>
+                    </thead>
+                    <tbody ng-if="noRecordsTeacher=='false'">
+                        <tr ng-repeat="teacher in teachers | filter : searchText">
+                            <td>{{teacher.firstName}} {{teacher.lastName}}</td>
+                            <td>{{teacher.class}}</td>
+                            <td><a href="" ng-click="getTeacherInfo(teacher)">view</a> <a href="" ng-click="editTeacherInfo(teacher)">edit</a> <a href="" ng-click="deleteTeacher(teacher.id)">delete</a></td>
+                        </tr>
+                        <tbody ng-if="noRecordsTeacher=='true'">
+                            <tr>
+                                <td colspan="3" class="text-center">{{notification}}</td>
+                            </tr>
+                        </tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+         
+         <!-- view purpose -->
+    <div id="right_container" class="col-sm-10 slide-animate-container" >
+        <div class="container-fluid" ng-if="viewDetails=='true' ">
+            <div class="slide-animate" ng-include="'views/includedViews/viewStudent.html'"></div>
+        </div>
+    </div>
+
+            <!-- edit purpose -->
+    <div id="right_container" class="col-sm-10 slide-animate-container" >
+        <div class="container-fluid" ng-if="editDetails=='true'">
+            <div class="slide-animate" ng-include="'views/includedViews/editStudent.html'"></div>
+        </div>
+    </div>  
+
+            <!-- Adding a teacher -->
+    <div id="right_container" class="col-sm-10" >
+        <div class="container-fluid" ng-if="addTeacher=='true' && viewTeacher=='false'">
+            <div class="slide-animate" ng-include="'views/includedViews/addTeacher.html'"></div>
+        </div>
+    </div>
+
+        <!-- teacher view purpose -->
+    <div id="right_container" class="col-sm-10" >
+        <div class="container-fluid" ng-if="viewTeacher=='true'">
+            <div class="slide-animate" ng-include="'views/includedViews/viewTeacher.html'"></div>  
+        </div>
+    </div>
+                <!-- edit teacher -->
+     <div id="right_container" class="col-sm-10" >
+        <div class="container-fluid" ng-if="editTeacher=='true'">
+            <div class="slide-animate" ng-include="'views/includedViews/editTeacher.html'"></div>
+        </div>
+    </div>
+
+    <div id="right_container" class="col-sm-10" >
+        <div class="container-fluid" ng-if="adjustClasses=='true'">
+            <div class="slide-animate" ng-include="'views/includedViews/adjustClasses.html'"></div>
+        </div>
+    </div>
+</div>
+        
